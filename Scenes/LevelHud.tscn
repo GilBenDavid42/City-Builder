@@ -1,0 +1,385 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scenes/Fade.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/LevelHud.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Inventory.gd" type="Script" id=5]
+[ext_resource path="res://Resources/SoftTheme.tres" type="Theme" id=6]
+[ext_resource path="res://Scripts/Score.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Platformer Pack/PNG/HUD/hudCoin.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Platformer Pack/PNG/HUD/hudPlayer_blue.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Interface Sounds/Audio/drop_003.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Interface Sounds/Audio/drop_004.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Interface Sounds/Audio/drop_001.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Interface Sounds/Audio/drop_002.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Scenes/Menu.tscn" type="PackedScene" id=14]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Civilians Change"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("PanelContainer/VBoxContainer/CiviliansChange:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("PanelContainer/VBoxContainer/CiviliansChange:rect_position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 400, -0.25, 0, 0.25, 0, 450, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Money Change"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("PanelContainer/VBoxContainer/MoneyChange:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("PanelContainer/VBoxContainer/MoneyChange:rect_position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 400, -0.25, 0, 0.25, 0, 450, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5 )
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("PanelContainer:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("PanelContainer:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("PanelContainer:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("PanelContainer/VBoxContainer/CiviliansChange:rect_position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 442, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("PanelContainer/VBoxContainer/CiviliansChange:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("PanelContainer/VBoxContainer/MoneyChange:rect_position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 442, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("PanelContainer/VBoxContainer/MoneyChange:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("PanelContainer:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("PanelContainer:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("PanelContainer:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[node name="LevelHud" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="Inventory"]
+anchor_top = 0.861
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.119934
+grow_horizontal = 2
+theme = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Inventory/PanelContainer"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 1914.0
+margin_bottom = 146.0
+theme = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Inventory/PanelContainer/ScrollContainer"]
+margin_right = 1908.0
+margin_bottom = 142.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.41418
+margin_bottom = -1.41418
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="Score"]
+anchor_right = 0.312
+anchor_bottom = 0.154
+margin_right = 0.959961
+margin_bottom = -0.320007
+grow_horizontal = 2
+theme = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="GridContainer" parent="Score/PanelContainer"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 594.0
+margin_bottom = 162.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+columns = 4
+
+[node name="CiviliansHud" type="TextureRect" parent="Score/PanelContainer/VBoxContainer"]
+margin_right = 69.0
+margin_bottom = 77.0
+size_flags_vertical = 3
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="CiviliansText" type="Label" parent="Score/PanelContainer/VBoxContainer"]
+margin_left = 73.0
+margin_right = 288.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+text = "Civilians:"
+valign = 1
+
+[node name="CiviliansAmount" type="Label" parent="Score/PanelContainer/VBoxContainer"]
+margin_left = 292.0
+margin_right = 438.0
+margin_bottom = 77.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+text = "3"
+valign = 1
+
+[node name="CiviliansChange" type="Label" parent="Score/PanelContainer/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 442.0
+margin_right = 588.0
+margin_bottom = 77.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+valign = 1
+
+[node name="MoneyHud" type="TextureRect" parent="Score/PanelContainer/VBoxContainer"]
+margin_top = 81.0
+margin_right = 69.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 69, 69 )
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="MoneyText" type="Label" parent="Score/PanelContainer/VBoxContainer"]
+margin_left = 73.0
+margin_top = 81.0
+margin_right = 288.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+text = "Money:"
+valign = 1
+
+[node name="MoneyAmount" type="Label" parent="Score/PanelContainer/VBoxContainer"]
+margin_left = 292.0
+margin_top = 81.0
+margin_right = 438.0
+margin_bottom = 158.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+text = "3"
+valign = 1
+
+[node name="MoneyChange" type="Label" parent="Score/PanelContainer/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 442.0
+margin_top = 81.0
+margin_right = 588.0
+margin_bottom = 158.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Score"]
+"anims/Civilians Change" = SubResource( 1 )
+"anims/Money Change" = SubResource( 2 )
+anims/Reset = SubResource( 3 )
+"anims/Score In" = SubResource( 4 )
+
+[node name="Sounds" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Click" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 13 )
+
+[node name="Increase" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 11 )
+
+[node name="Plant" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 10 )
+
+[node name="Hover" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 12 )
+
+[node name="Popups" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowDialog" type="ConfirmationDialog" parent="Popups"]
+anchor_left = 0.24
+anchor_top = 0.394
+anchor_right = 0.76
+anchor_bottom = 0.606
+margin_left = -0.800018
+margin_top = -0.52002
+margin_right = 0.799927
+margin_bottom = 0.52002
+rect_min_size = Vector2( 100, 200 )
+theme = ExtResource( 6 )
+window_title = "Destroy"
+resizable = true
+dialog_text = "Are you sure that you want to destroy
+this building?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" parent="." instance=ExtResource( 14 )]
+mode = 1
+
+[node name="Fade" parent="." instance=ExtResource( 1 )]
+[connection signal="confirmed" from="Popups/WindowDialog" to="." method="_on_WindowDialog_confirmed"]
+[connection signal="popup_hide" from="Popups/WindowDialog" to="." method="_on_WindowDialog_popup_hide"]
+[connection signal="closed" from="Menu" to="." method="_on_Menu_closed"]

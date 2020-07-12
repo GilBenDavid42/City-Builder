@@ -2,10 +2,10 @@ extends Button
 
 class_name Building
 
-const TYPE_HOUSE = 0
-const TYPE_BANK = 1
-const HOUSE = "res://Assets/Isometric Buildings/House"
-const BANK = "res://Assets/Isometric Buildings/Bank"
+const TYPE_HOUSE: = 0
+const TYPE_BANK: = 1
+const HOUSE: = "res://Assets/Isometric Buildings/House"
+const BANK: = "res://Assets/Isometric Buildings/Bank"
 
 export var build: = ""
 export var price: = 0
@@ -20,7 +20,7 @@ func initialize(b, p, g, t, a):
 	$Amount.text = str(a)
 	add_texture()
 	$AnimationPlayer.play("Item In")
-	
+
 func add_texture():
 	var num: = randi() % 9 + 1
 	var random_path: = ""
