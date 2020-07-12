@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Background Elements/Backgrounds/backgroundColorForest.png" type="Texture" id=1]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+follow_viewport_enable = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 1100, 0 )
+
+[node name="backgroundColorForest" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 550, 550 )
+scale = Vector2( 1.075, 1.075 )
+texture = ExtResource( 1 )

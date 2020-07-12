@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 onready var item_scene: = preload("res://Scenes/Item.tscn")
 

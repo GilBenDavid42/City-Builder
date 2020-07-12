@@ -1,0 +1,504 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Assets/Font Nunito/Nunito-ExtraBold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Resources/SoftTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Isometric Buildings/PNG/buildingTiles_001.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Music/TownTheme.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Interface Sounds/Audio/drop_001.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Interface Sounds/Audio/drop_002.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/Fade.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Blur.tscn" type="PackedScene" id=10]
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+outline_size = 5
+outline_color = Color( 0.0980392, 0.0980392, 0.196078, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "Buttons In"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Buttons/Continue:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 100, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Buttons/Continue:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Buttons/Start:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.7, 1.2 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Buttons/Start:rect_position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 100, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.7, 1.2 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Buttons/Exit:rect_position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 100, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.9, 1.4 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Buttons/Exit:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.9, 1.4 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Label:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Buttons Out"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Buttons/Continue:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 100, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Buttons/Continue:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Buttons/Start:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.2, 0.6 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Buttons/Start:rect_position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 100, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.2, 0.6 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Buttons/Exit:rect_position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 100, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.4, 0.8 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Buttons/Exit:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.4, 0.8 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Label:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 0.9 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Panel In"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("..:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("..:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("..:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8 )
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Panel Out"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("..:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("..:rect_scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("..:rect_scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6 )
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Reset"
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Buttons/Continue:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 100, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Buttons/Continue:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Buttons/Start:rect_position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 100, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Buttons/Start:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Buttons/Exit:rect_position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 100, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Buttons/Exit:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("..:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("..:rect_scale:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("..:rect_scale:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("Label:modulate:a")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Blur"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Blur:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+start_level = "res://Scenes/Level0.tscn"
+
+[node name="Blur" parent="." instance=ExtResource( 10 )]
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -600.0
+margin_top = -450.0
+margin_right = 600.0
+margin_bottom = 450.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+rect_pivot_offset = Vector2( 600, 450 )
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 1194.0
+margin_bottom = 896.0
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1188.0
+margin_bottom = 146.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.960784, 0.74902, 0.47451, 1 )
+text = "Building Game"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/Label"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -503.035
+margin_top = -61.9126
+margin_right = -370.035
+margin_bottom = 65.0874
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer"]
+margin_top = 150.0
+margin_right = 1188.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 100 )
+theme = ExtResource( 2 )
+
+[node name="Buttons" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 254.0
+margin_right = 1188.0
+margin_bottom = 892.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="PanelContainer/VBoxContainer/Buttons"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1188.0
+margin_bottom = 210.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+disabled = true
+text = "Continue"
+
+[node name="Start" type="Button" parent="PanelContainer/VBoxContainer/Buttons"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 214.0
+margin_right = 1188.0
+margin_bottom = 424.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "Start"
+
+[node name="Exit" type="Button" parent="PanelContainer/VBoxContainer/Buttons"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 428.0
+margin_right = 1188.0
+margin_bottom = 638.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "Exit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PanelContainer/VBoxContainer"]
+"anims/Buttons In" = SubResource( 1 )
+"anims/Buttons Out" = SubResource( 5 )
+"anims/Panel In" = SubResource( 3 )
+"anims/Panel Out" = SubResource( 4 )
+anims/Reset = SubResource( 8 )
+
+[node name="Sounds" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Music" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 5 )
+volume_db = -6.128
+autoplay = true
+
+[node name="Click" type="AudioStreamPlayer2D" parent="Sounds"]
+position = Vector2( 366, 348 )
+stream = ExtResource( 6 )
+
+[node name="Hover" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Blur = SubResource( 7 )
+
+[node name="Fade" parent="." instance=ExtResource( 8 )]
+[connection signal="button_up" from="PanelContainer/VBoxContainer/Buttons/Continue" to="." method="_on_Continue_button_up"]
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Buttons/Continue" to="." method="_on_Continue_mouse_entered"]
+[connection signal="button_up" from="PanelContainer/VBoxContainer/Buttons/Start" to="." method="_on_Start_button_up"]
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Buttons/Start" to="." method="_on_Start_mouse_entered"]
+[connection signal="button_up" from="PanelContainer/VBoxContainer/Buttons/Exit" to="." method="_on_Exit_button_up"]
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Buttons/Exit" to="." method="_on_Exit_mouse_entered"]
+[connection signal="animation_finished" from="PanelContainer/VBoxContainer/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_started" from="PanelContainer/VBoxContainer/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]
+[connection signal="fade_in" from="Fade" to="." method="_on_Fade_fade_in"]
+[connection signal="fade_out" from="Fade" to="." method="_on_Fade_fade_out"]
